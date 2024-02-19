@@ -1,29 +1,17 @@
 <x-user-layout>
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
-                <div class="max-w-xl">
-                    <livewire:pages.user.update-profile-information-form />
-                </div>
-            </div>
-
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
-                <div class="max-w-xl">
-                    <livewire:pages.user.update-password-form />
-                </div>
-            </div>
-
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-lg">
-                <div class="max-w-xl">
-                    <livewire:pages.user.profile.delete-user-form />
-                </div>
-            </div>
+  <div class="py-[10px] px-2">
+    <div class="w-full px-[7.5px] mx-auto">
+      <div class="flex flex-wrap mb-2 -mx-[7.5px] justify-between">
+        <div class="col-span-6 text-lg text-[#212529]">
+          <h1 class="m-0"></h1><h1>Perfil</h1>
         </div>
+      </div>
     </div>
+  </div>
+  <section class="px-2">
+    <div class="grid gap-3.5 sm:grid-cols-1 md:grid-cols-2 mb-4">
+      <livewire:pages.admin.profile.update-profile-information-form />
+      <livewire:pages.admin.profile.update-password-form />
+    </div>
+  </section>
 </x-user-layout>

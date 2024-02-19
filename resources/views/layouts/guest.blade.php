@@ -10,8 +10,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @livewireStyles
     @stack('css')
+    @livewireStyles
   </head>
   <body class="font-sans antialiased text-[#1D1D1B]">
     <div class="flex flex-wrap w-full">
@@ -30,6 +30,6 @@
       </div>
     </div>
     @stack('js')
-    @livewireScripts
+    @livewireScriptConfig
   </body>
 </html>

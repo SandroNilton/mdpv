@@ -13,6 +13,7 @@
         "livewire/livewire": "^3.0",
         "livewire/volt": "^1.0",
         "rappasoft/laravel-livewire-tables": "^3.2",
+        "sirajcse/laravel-unique-id-generator": "^1.0",
         "spatie/laravel-livewire-wizard": "^2.0"
     },
     "require-dev": {

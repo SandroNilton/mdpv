@@ -93,7 +93,7 @@ new #[Layout('layouts.admin')] class extends Component
         <div>
           <x-input-label for="requirements_async" :value="__('Requisitos')" />
           <div class="flex gap-3" wire:ignore>
-            <select wire:model.lazy="form.requirements_async" name="requirements_async" id="requirements_async" class="block w-full" multiple>
+            <select wire:model.lazy="form.requirements_async" name="requirements_async" id="requirements_async" class="block w-full selectMul" multiple>
               @foreach ($this->form->type_procedure->requirements as $requirement)
                 <option value="{{ $requirement->id }}" selected> {{ $requirement->name }}</option>
               @endforeach
@@ -137,14 +137,9 @@ new #[Layout('layouts.admin')] class extends Component
 </x-modal>
 
 @push('js')   
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
   @script
-
-    <script data-navigate-once>
-      document.addEventListener("livewire:navigated", () => {
-        $('#requirements_async').select2({
+    <script>
+        $('.selectMul').select2({
           placeholder: '{{__('Elija sus requisitos')}}',
           ajax: {
             url: "{{ route('requirement.select2') }}",
@@ -163,12 +158,11 @@ new #[Layout('layouts.admin')] class extends Component
           }
         });
 
-        $('#requirements_async').on('change', function (e) {
+        $('.selectMul').on('change', function (e) {
           var data = $(this).val();
-          $wire.form.requirements_async = data;
+          $wire.form.requirements = data;
         });
-      });
     </script>
-
+    
   @endscript
 @endpush

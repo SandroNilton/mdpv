@@ -57,7 +57,7 @@ class TypeProcedureForm extends Form
     public function update(): void
     {
         $this->type_procedure->update($this->all());
-        $this->type_procedure->requirements()->sync($this->requirements_async);
+        $this->type_procedure->requirements()->sync($this->requirements);
     }
 
     /**

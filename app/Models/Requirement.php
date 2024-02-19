@@ -10,4 +10,9 @@ class Requirement extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function type_procedure()
+    {
+      return $this->belongsToMany(TypeProcedure::class);
+    }
 }

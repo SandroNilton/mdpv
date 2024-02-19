@@ -32,7 +32,7 @@ new #[Layout('layouts.guest')] class extends Component
 ?>
 
 <div>
-  <p class="text-2xl font-bold text-center">Bienvenido</p>
+  <p class="text-2xl font-bold text-center">Bienvenido a MDPV</p>
   <form wire:submit="login" class="flex flex-col mt-8">
     <div>
       <x-input-label for="email" :value="__('Email')" />

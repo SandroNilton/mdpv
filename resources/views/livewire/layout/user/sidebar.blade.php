@@ -39,22 +39,16 @@ new class extends Component
 
 @php
     $links = [
-        ['title' => 'Inicio', 'icon' => 'fa-solid fa-home', 'url' => route('admin.dashboard'), 'active' => request()->routeIs('admin.dashboard'), 'can' => 'admin.procedures.index', 'count' => $this->procedure_count],
-        ['title' => 'Usuarios', 'icon' => 'fa-solid fa-users', 'url' => route('admin.dashboard'), 'active' => request()->routeIs('admin.users'), 'can' => 'admin.users.index', 'count' => $this->user_count],
-        ['title' => 'Clientes', 'icon' => 'fa-solid fa-user-group', 'url' => route('admin.dashboard'), 'active' => request()->routeIs('admin.customers'), 'can' => 'admin.customers.index' , 'count' => $this->user_count],
-        ['title' => 'Roles', 'icon' => 'fa-solid fa-lock', 'url' => route('admin.dashboard'), 'active' => request()->routeIs('admin.roles'), 'can' => 'admin.roles.index', 'count' => $this->user_count],
-        ['title' => 'Categorias', 'icon' => 'fa-solid fa-list', 'url' => route('admin.categories.index'), 'active' => request()->routeIs('admin.categories.*'), 'can' => 'admin.categories.index', 'count' => $this->category_count],
-        ['title' => 'Areas', 'icon' => 'fa-solid fa-layer-group', 'url' => route('admin.areas.index'), 'active' => request()->routeIs('admin.areas.*'), 'can' => 'admin.areas.index', 'count' => $this->area_count],
-        ['title' => 'Requisitos', 'icon' => 'fa-solid fa-paperclip', 'url' => route('admin.requirements.index'), 'active' => request()->routeIs('admin.requirements.*'), 'can' => 'admin.requirements.index', 'count' => $this->requirement_count],
-        ['title' => 'Tipos de trámite', 'icon' => 'fa-solid fa-clipboard-list', 'url' => route('admin.type-procedures.index'), 'active' => request()->routeIs('admin.type_procedures'), 'can' => 'admin.typeprocedures.index', 'count' => $this->type_proc_count]
+        ['title' => 'Inicio', 'icon' => 'fa-solid fa-home', 'url' => route('user.dashboard'), 'active' => request()->routeIs('user.dashboard'), 'can' => 'admin.procedures.index', 'count' => $this->procedure_count],
+        ['title' => 'Trámites', 'icon' => 'fa-solid fa-folder-closed', 'url' => route('user.procedures.index'), 'active' => request()->routeIs('user.procedures.index'), 'can' => 'admin.procedures.index', 'count' => $this->procedure_count],
     ];
 @endphp
 
 <aside class="inset-y-0 transition-all transform flex-col -translate-x-full lg:translate-x-0 lg:z-auto lg:static max-h-screen bg-[#343A40] flex-shrink-0 w-[250px] left-0 top-0 bottom-0 float-none overflow-y-auto overflow-hidden scroll z-20 fixed" x-transition:enter="transition transform duration-300" x-transition:enter-start="-translate-x-full opacity-30  ease-in" x-transition:enter-end="translate-x-0 opacity-100 ease-out" x-transition:leave="transition transform duration-300" x-transition:leave-start="translate-x-0 opacity-100 ease-out" x-transition:leave-end="-translate-x-full opacity-0 ease-in" :class="{'-translate-x-full lg:translate-x-0 lg:w-[4.6rem]': !isSidebarOpen}">
-  <a href="{{ route('admin.dashboard') }}" wire:navigate class="self-center justify-center content-center top-0 overflow-hidden w-full bg-[#F7F7F7] flex py-[0.8125rem] px-[0.5rem] whitespace-nowrap" :class="isSidebarOpen ? 'block' : 'hidden'">
+  <a href="{{ route('user.dashboard') }}" wire:navigate class="self-center justify-center content-center top-0 overflow-hidden w-full bg-[#F7F7F7] flex py-[0.8125rem] px-[0.5rem] whitespace-nowrap" :class="isSidebarOpen ? 'block' : 'hidden'">
     <x-application-logo class="h-[29px] -mb-1 -mt-1 float-none ml-0 max-h-8" />
   </a>
-  <a href="{{ route('admin.dashboard') }}" wire:navigate class="self-center justify-center content-center top-0 overflow-hidden w-full bg-[#F7F7F7] flex py-[0.8125rem] px-[0.5rem] whitespace-nowrap" :class="isSidebarOpen ? 'hidden' : 'block'">
+  <a href="{{ route('user.dashboard') }}" wire:navigate class="self-center justify-center content-center top-0 overflow-hidden w-full bg-[#F7F7F7] flex py-[0.8125rem] px-[0.5rem] whitespace-nowrap" :class="isSidebarOpen ? 'hidden' : 'block'">
     <x-application-icon class="h-[29px] -mb-1 -mt-1 float-none ml-0 max-h-8" />
   </a>
   <div class="px-2 space-y-[0.2rem]">
